@@ -1,0 +1,43 @@
+CREATE DATABESE emp_rec;
+USE emp_rec;
+
+Q1. create table
+
+a.
+CREATE TABLE IF NOT EXISTS jobs ( 
+JOB_ID varchar(10) NOT NULL , 
+JOB_TITLE varchar(35) NOT NULL, 
+MIN_SALARY decimal(6,0), 
+MAX_SALARY decimal(6,0) 
+CHECK(MAX_SALARY<=25000)
+);
+
+b.
+ CREATE TABLE IF NOT EXISTS countries ( country_id int, COUNTRY_NAME varchar(10) check(COUNTRY_NAME='india' ||COUNTRY_NAME='itely' || COUNTRY_NAME = 'china'), REGION_ID varchar(4) not null);
+
+c.
+CREATE TABLE job_history ( 
+EMPLOYEE_ID decimal(4,0) PRIMARY KEY, 
+START_DATE date , 
+END_DATE date , 
+JOB_ID varchar(10), 
+DEPARTMENT_ID decimal(4,0)
+)
+
+
+q2.
+a.
+b. alter table countries rename to Countries_new;
+c. alter table countries_new RENAME COLUMN country_id TO con_id;
+
+
+q3. DML Statement
+a.
+ INSERT INTO countries values(91,'india','ind1');
+
+b.
+INSERT INTO JOBS VALUES('AD_PRESS','president', 10000,20000),('AD_VP','Administration Vice President',15000,24000),('AD_ASST','Administration Assistent',3000,6000),('AC_ACCOUNT','Public Accountant',4200,20000),('SA_MAN','Sales manager',15000,24000),('PU_CLERK','Purchasing Clerk',2500,5500);
+
+c.
+UPDATE jobs SET=min_salary=8000, max_salary=24000 
+where job_id='AD_ASST';   
