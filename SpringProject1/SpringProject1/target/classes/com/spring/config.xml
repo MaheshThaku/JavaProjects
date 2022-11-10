@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+           
+ 
+     
+           <bean id="firstBook" class="com.spring.Book">
+           		<property name="bid" value="1"/>
+           		<property name="bname" value="Java McGrow"/>
+           		<property name="price" value="1350"/>
+           </bean>
+           
+           <bean id="secondBook" class="com.spring.Book">
+           	<property name="bid" value="2"/>
+           	<property name="bname" value="C Programming"/>
+           	<property name="price" value="650"/>
+           </bean>
+           
+           <bean id="thirdBook" class="com.spring.Book" p:bid="3" p:bname="C++" p:price="769"/>
+           
+           <bean id="forthBook" class="com.spring.Book">
+           <constructor-arg value="4" type="int"/>
+           <constructor-arg value="Intro to Web Tech"/>
+           <constructor-arg value="999"/>
+           </bean>
+           
+           
+           <bean id="a1" class="com.spring.Address" p:hno="h124" p:area="Hathin" p:city="Palwal"/>
+           
+           <bean id="a2" class="com.spring.Address">
+        		<constructor-arg value="h751"/>   
+        		<constructor-arg value="raipur"/>   
+        		<constructor-arg value="palwal"/>   
+           </bean>
+        
+       		<bean id="stu1" class="com.spring.Student">
+       		<constructor-arg value="101"/>
+       		<constructor-arg value="Mahesh Thakur"/>
+       		<constructor-arg ref="firstBook" />
+       		<constructor-arg ref="a1"/>
+       		</bean>  
+       		
+       		<bean id="stu2" class="com.spring.Student">
+       		<constructor-arg value="102"/>
+       		<constructor-arg value="Mohan Thakur"/>
+       		<constructor-arg ref="secondBook" />
+       		<constructor-arg ref="a2"/>
+       		</bean>
+</beans>
